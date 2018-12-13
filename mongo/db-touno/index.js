@@ -1,21 +1,22 @@
 const { MongoConnection, MongoSchemaMapping } = require('../db-mongo')
 
-let conn = {
+global._dbTounoConn = {
   connected: () => false
 }
+
 module.exports = {
-  connected: () => conn.connected(),
+  connected: () => global._dbTounoConn.connected(),
   open: async () => {
-    if (!conn.connected()) {
-      conn = await MongoConnection('db_touno')
-      MongoSchemaMapping(conn, require('./anime'))
-      MongoSchemaMapping(conn, require('./app'))
-      MongoSchemaMapping(conn, require('./donate'))
-      MongoSchemaMapping(conn, require('./expanse'))
-      MongoSchemaMapping(conn, require('./github'))
-      MongoSchemaMapping(conn, require('./schedule'))
-      MongoSchemaMapping(conn, require('./wakatime'))
+    if (!global._dbTounoConn.connected()) {
+      global._dbTounoConn = await MongoConnection(process.env.MONGODB_NAME_TOUNO || 'db_touno')
+      MongoSchemaMapping(global._dbTounoConn, require('./anime'))
+      MongoSchemaMapping(global._dbTounoConn, require('./app'))
+      MongoSchemaMapping(global._dbTounoConn, require('./donate'))
+      MongoSchemaMapping(global._dbTounoConn, require('./expanse'))
+      MongoSchemaMapping(global._dbTounoConn, require('./github'))
+      MongoSchemaMapping(global._dbTounoConn, require('./schedule'))
+      MongoSchemaMapping(global._dbTounoConn, require('./wakatime'))
     }
-    return conn
+    return global._dbTounoConn
   }
 }

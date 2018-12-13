@@ -1,15 +1,15 @@
 const { MongoConnection, MongoSchemaMapping } = require('../db-mongo')
 
-let conn = {
+global._dbCryptoConn = {
   connected: () => false
 }
 module.exports = {
-  connected: () => conn.connected(),
+  connected: () => global._dbCryptoConn.connected(),
   open: async () => {
-    if (!conn.connected()) {
-      conn = await MongoConnection('db_crypto')
-      MongoSchemaMapping(conn, require('./crypto-market'))
+    if (!global._dbCryptoConn.connected()) {
+      global._dbCryptoConn = await MongoConnection('db_crypto')
+      MongoSchemaMapping(global._dbCryptoConn, require('./crypto-market'))
     }
-    return conn
+    return global._dbCryptoConn
   }
 }

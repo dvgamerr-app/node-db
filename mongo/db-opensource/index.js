@@ -1,17 +1,17 @@
 const { MongoConnection, MongoSchemaMapping } = require('../db-mongo')
 
-let conn = {
+global._dbOpenSourceConn = {
   connected: () => false
 }
 module.exports = {
-  connected: () => conn.connected(),
+  connected: () => global._dbOpenSourceConn.connected(),
   open: async () => {
-    if (!conn.connected()) {
-      conn = await MongoConnection('db_opensource')
-      MongoSchemaMapping(conn, require('./exhentai'))
-      MongoSchemaMapping(conn, require('./pokedex'))
-      MongoSchemaMapping(conn, require('./anilist'))
+    if (!global._dbOpenSourceConn.connected()) {
+      global._dbOpenSourceConn = await MongoConnection(process.env.MONGODB_NAME_OPENSOURCE || 'db_opensource')
+      MongoSchemaMapping(global._dbOpenSourceConn, require('./exhentai'))
+      MongoSchemaMapping(global._dbOpenSourceConn, require('./pokedex'))
+      MongoSchemaMapping(global._dbOpenSourceConn, require('./anilist'))
     }
-    return conn
+    return global._dbOpenSourceConn
   }
 }
