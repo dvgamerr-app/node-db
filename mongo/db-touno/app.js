@@ -13,20 +13,14 @@ module.exports = [
     id: 'TounoTimeline',
     name: 'app-touno-timeline',
     schema: mongoose.Schema({
-      title: {
-        type: String,
-        index: true
-      },
+      title: { type: String, index: true },
       subtitle: String,
       image: String,
       quote: String,
       detail: String,
       color: String,
       datetime: Date,
-      created: {
-        type: Date,
-        index: true
-      }
+      created: { type: Date, index: true }
     })
   },
   {
@@ -37,13 +31,8 @@ module.exports = [
       client: String,
       state: String,
       token: Object,
-      updated: {
-        type: Date,
-        index: true
-      },
-      created: {
-        type: Date,
-        index: true
+      updated: { type: Date, index: true },
+      created: { type: Date, index: true
       }
     })
   },
@@ -60,26 +49,12 @@ module.exports = [
     id: 'AuthAccount',
     name: 'db-auth-account',
     schema: mongoose.Schema({
-      username: {
-        type: String,
-        index: true,
-        unique: true
-      },
-      email: {
-        type: String,
-        index: true,
-        unique: true
-      },
+      username: { type: String, index: true, unique: true },
+      email: { type: String, index: true, unique: true },
       password: String,
       permission: String,
-      created: {
-        type: Date,
-        index: true
-      },
-      enabled: {
-        type: Boolean,
-        index: true
-      }
+      created: { type: Date, index: true },
+      enabled: { type: Boolean, index: true }
     })
   },
   {
@@ -90,33 +65,18 @@ module.exports = [
       token: String,
       hash: String,
       online: Boolean,
-      created: {
-        type: Date,
-        index: true
-      }
+      created: { type: Date, index: true }
     })
   },
   {
-    id: 'Notify',
+    id: 'LogNotify',
     name: 'log-notify',
     schema: mongoose.Schema({
-      endpoint: {
-        type: String,
-        index: true
-      },
+      endpoint: { type: String, index: true },
       message: mongoose.Schema.Types.Mixed,
-      notify: {
-        type: Boolean,
-        index: true
-      },
-      schedule: {
-        type: Date,
-        index: true
-      },
-      created: {
-        type: Date,
-        index: true
-      }
+      notify: { type: Boolean, index: true },
+      schedule: { type: Date, index: true },
+      created: Date
     })
   },
   {
@@ -127,30 +87,18 @@ module.exports = [
       token: Boolean,
       ipaddress: String,
       requested: Date,
-      created: {
-        type: Date,
-        index: true
-      }
+      created: { type: Date, index: true }
     })
   },
   {
-    id: 'Audit',
+    id: 'LogAudit',
     name: 'log-audit',
     schema: mongoose.Schema({
-      type: {
-        type: String,
-        index: true
-      },
-      scope: {
-        type: String,
-        index: true
-      },
+      type: { type: String, index: true },
+      scope: { type: String, index: true },
       message: String,
       tag: Array,
-      created: {
-        type: Date,
-        index: true
-      }
+      created: { type: Date, index: true }
     })
   }
 ]
