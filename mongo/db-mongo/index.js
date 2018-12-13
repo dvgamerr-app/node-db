@@ -7,7 +7,6 @@ module.exports = {
     const MONGODB_ACCOUNT = account || process.env.MONGODB_ADMIN
     const MONGODB_SERVER = server || process.env.MONGODB_SERVER || 'localhost:27017'
 
-    if (MONGODB_ACCOUNT === undefined || !MONGODB_SERVER) throw new Error('MongoDB not found environment db-mongo.')
     let MONGODB_URI = `mongodb://${MONGODB_ACCOUNT ? `${MONGODB_ACCOUNT}@` : ''}${MONGODB_SERVER}/${dbname}?authMode=scram-sha1${IsAdmin ? '&authSource=admin' : ''}`
     let conn = await mongoose.createConnection(MONGODB_URI, { useCreateIndex: true, useNewUrlParser: true, connectTimeoutMS: 10000 })
     if (conn.readyState !== 1) throw new Error(`MongoDB Connection, ${MONGODB_URI}/${dbname} (State is ${conn.readyState})`)

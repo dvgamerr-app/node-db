@@ -17,7 +17,7 @@
     "index.js",
     "LICENSE",
     "README.MD",
-    "mongodb/**/*"
+    "mongo/**/*"
   ],
   "keywords": [
     "touno.io",

@@ -7,7 +7,7 @@ module.exports = {
   connected: () => conn.connected(),
   open: async () => {
     if (!conn.connected()) {
-      conn = await MongoConnection('db_crypto', process.env.DBCRYPTO_USER, process.env.DBCRYPTO_SERVER)
+      conn = await MongoConnection('db_crypto')
       MongoSchemaMapping(conn, require('./crypto-market'))
     }
     return conn
