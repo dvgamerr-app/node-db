@@ -2,10 +2,10 @@
 
 all database schema in touno-io project.
 
-### Requirement Environment
+### Environment
 ```ini
-RAVEN_CONFIG=https://{PUBLIC_KEY}:{SECRET_KEY}@sentry.io/{PROJECT_ID}
-MONGODB_DEBUGER_URI=mongodb://localhost:27017/?authMode=scram-sha1&authSource=admin
+MONGODB_ADMIN=
+MONGODB_SERVER=localhost:27017
 ```
 
 ### Installation

@@ -7,7 +7,7 @@ module.exports = {
   connected: () => conn.connected(),
   open: async () => {
     if (!conn.connected()) {
-      conn = await MongoConnection('db_touno', process.env.DBTOUNO_USER, process.env.DBTOUNO_SERVER)
+      conn = await MongoConnection('db_touno')
       MongoSchemaMapping(conn, require('./anime'))
       MongoSchemaMapping(conn, require('./app'))
       MongoSchemaMapping(conn, require('./donate'))
