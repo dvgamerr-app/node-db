@@ -9,7 +9,7 @@ module.exports = [
       position: String,
       birthday: { index: true, type: Date },
       small: String,
-      full: String',
+      full: String,
       name_th: String,
       name_en: String,
       height: String,
