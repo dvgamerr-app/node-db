@@ -16,6 +16,7 @@ module.exports = {
       MongoSchemaMapping(global._dbTounoConn, require('./github'))
       MongoSchemaMapping(global._dbTounoConn, require('./schedule'))
       MongoSchemaMapping(global._dbTounoConn, require('./wakatime'))
+      MongoSchemaMapping(global._dbTounoConn, require('./linebot'))
     }
     return global._dbTounoConn
   }
