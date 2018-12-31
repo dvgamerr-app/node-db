@@ -16,6 +16,20 @@ module.exports = [
     })
   },
   {
+    id: 'BnkOtaEvent',
+    name: 'db-bnk48-ota-event',
+    schema: mongoose.Schema({
+      roomId: { index: true, type: String },
+      roomType: { index: true, type: String },
+      eventId: { index: true, type: Number },
+      schedule: { index: true, type: Date },
+      sender: Object,
+      notify: { index: true, type: Boolean },
+      created: Date,
+      updated: Date
+    })
+  },
+  {
     id: 'BnkMember',
     name: 'db-bnk48-member',
     schema: mongoose.Schema({
@@ -40,6 +54,7 @@ module.exports = [
     name: 'db-bnk48-schedule',
     schema: mongoose.Schema({
       id: { index: true, type: Number },
+      type: { index: true, type: String },
       name: String,
       date: {
         from: { index: true, type: Date },
