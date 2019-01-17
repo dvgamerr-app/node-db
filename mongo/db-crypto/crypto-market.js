@@ -5,10 +5,11 @@ module.exports = [
     id: 'CryptoMarket',
     name: 'db-market',
     schema: mongoose.Schema({
-      market: String,
+      market: { index: true, type: String },
+      symbol: { index: true, type: String },
       ask: Number,
       bid: Number,
-      created: Date
+      created: { index: true, type: Date }
     })
   }
 ]
