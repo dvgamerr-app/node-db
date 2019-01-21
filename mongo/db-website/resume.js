@@ -7,5 +7,19 @@ module.exports = [
       data: { index: true, type: String },
       content: mongoose.Schema.Types.Mixed
     })
+  },
+  {
+    id: 'WebResumeContact',
+    name: 'web-resume-contact',
+    schema: mongoose.Schema({
+      name: String,
+      email: String,
+      subject: String,
+      token: String,
+      text: String,
+      sended: Boolean,
+      readed: Boolean,
+      created: Date
+    })
   }
 ]
