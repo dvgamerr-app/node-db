@@ -17,6 +17,8 @@ module.exports = [
       subject: String,
       token: String,
       text: String,
+      score: Number,
+      challenge: String,
       sended: Boolean,
       readed: Boolean,
       created: Date
