@@ -12,6 +12,7 @@ module.exports = {
       MongoSchemaMapping(global._dbOpenSourceConn, require('./pokedex'))
       MongoSchemaMapping(global._dbOpenSourceConn, require('./anilist'))
       MongoSchemaMapping(global._dbOpenSourceConn, require('./bnk48'))
+      MongoSchemaMapping(global._dbOpenSourceConn, require('./pollution'))
     }
     return global._dbOpenSourceConn
   }
