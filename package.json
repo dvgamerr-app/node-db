@@ -1,6 +1,6 @@
 {
   "name": "@touno-io/db",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "all database schema in touno-io project.",
   "main": "index.js",
   "scripts": {
@@ -34,17 +34,17 @@
   },
   "homepage": "https://github.com/touno-io/node-db#readme",
   "dependencies": {
-    "moment-timezone": "^0.5.23",
-    "mongoose": "^5.3.14"
+    "moment-timezone": "^0.5.25",
+    "mongoose": "^5.5.5"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.6",
+    "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
     "env-cmd": "^8.0.2",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-html": "^4.0.6",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",

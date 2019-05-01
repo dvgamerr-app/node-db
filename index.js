@@ -1,3 +1,5 @@
+const pkg = require('./package.json')
+
 module.exports = {
-  version: '1.0.0'
+  version: pkg.version
 }
