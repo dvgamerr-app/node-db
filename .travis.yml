@@ -37,7 +37,7 @@ deploy:
   on:
     branch: master
     tags: true
-    repo: @touno-io/db
+#    repo: @touno-io/db
 notifications:
   slack:
     rooms:
