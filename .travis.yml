@@ -16,7 +16,7 @@ before_script:
 - npm i
 - npm i --only=dev
 script:
-- echo.
+- npm --version
 # before_deploy:
 # - git fetch --tags
 # - git config --global user.email "${GIT_EMAIL}"
