@@ -1,2 +1,2 @@
-const { dbtouno } = require('../schema')
+const db = require('../schema')
 const mongo = require('../index')
