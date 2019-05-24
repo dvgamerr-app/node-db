@@ -15,7 +15,6 @@ const { mConn, mMapping } = {
 
     let MONGODB_URI = process.env.MONGODB_URI || `mongodb://${MONGODB_ACCOUNT}${MONGODB_SERVER}/${dbname}?authMode=scram-sha1${IsAdmin ? '&authSource=admin' : ''}${MONGODB_REPLICA ? `&replicaSet=${MONGODB_REPLICA}` : ''}`
 
-    console.log('uri:', MONGODB_URI)
     global['_mongo.' + dbname] = await mongoose.createConnection(MONGODB_URI, { useCreateIndex: true, useNewUrlParser: true, connectTimeoutMS: 10000 })
     if (global['_mongo.' + dbname].readyState !== 1) throw new Error(`MongoDB Connection, ${MONGODB_URI}/${dbname} (State is ${global['_mongo.' + dbname].readyState})`)
 

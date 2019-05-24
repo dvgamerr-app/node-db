@@ -1,11 +1,12 @@
 # @touno-io/db
 
-all database schema in touno-io project.
+mongodb simple connection 
 
 ### Environment
 ```ini
-MONGODB_ADMIN=
-MONGODB_SERVER=localhost:27017
+MONGODB_SERVER = 'localhost:27017'
+// Or
+MONGODB_URI = 'mongodb://localhost:27017'
 ```
 
 ### Installation
@@ -17,12 +18,28 @@ yarn i @touno-io/db
 
 **sample**
 ```javascript
-import { touno } from '@touno.io/db/mongo'
+import mongo from '@touno.io/db'
 
-const { Touno } = await touno.open()
-// Touno is mongodb collection.
+mongo.set('TableName1', 'table_name1', { data: String })
+
+await touno.open('database_name')
+
+mongo.set({
+  id: 'TableName2',
+  name: 'table_name2',
+  schema: {
+    data: String
+  }
+})
+
+const { TableName1 } = mongo.get()
+// or 
+const TableName1 = mongo.get('TableName1')
+
+let { data } = await TableName1.findOne({})
+
+await mongo.close()
 ```
-
 ----------
 ### License
 MIT © 2018 Touno™
