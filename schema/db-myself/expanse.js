@@ -1,4 +1,4 @@
-const mongo = require('../../index')
+const { ObjectId } = require('../../type')
 
 module.exports = [
   {
@@ -19,7 +19,7 @@ module.exports = [
     name: 'expense-bill',
     schema: {
       enabled: { type: Boolean, index: true, default: true },
-      account_id: { type: mongo.Schema.ObjectId, require: true },
+      account_id: { type: ObjectId, require: true },
       group: String,
       name: String,
       type: String,

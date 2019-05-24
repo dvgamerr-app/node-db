@@ -15,6 +15,7 @@
   "files": [
     "package.json",
     "index.js",
+    "type.js",
     "LICENSE",
     "README.MD",
     "mongo/**/*",

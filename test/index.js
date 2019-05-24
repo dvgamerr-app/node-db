@@ -1,2 +1,2 @@
 const db = require('../schema')
-const mongo = require('../index')
+const mongo = require('../index')()

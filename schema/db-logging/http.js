@@ -1,4 +1,4 @@
-const mongo = require('../../index')
+const { ObjectId } = require('../../type')
 
 module.exports = [
   {
@@ -16,7 +16,7 @@ module.exports = [
     id: 'HttpResponse',
     name: 'http-response',
     schema: {
-      req_id: { type: mongo.Schema.ObjectId, index: true, ref: 'HttpRequest' },
+      req_id: { type: ObjectId, index: true, ref: 'HttpRequest' },
       url: String,
       token: Boolean,
       ipaddress: String,

@@ -1,4 +1,4 @@
-const mongo = require('../../index')
+const { Mixed } = require('../../type')
 
 module.exports = [
   {
@@ -10,7 +10,7 @@ module.exports = [
       scope: { type: String, index: true, default: 'system' },
       status: { type: String, index: true, default: 'debug' },
       permission: { type: Number, index: true, default: 0 },
-      message: mongo.Schema.Mixed,
+      message: Mixed,
       raw: String,
       created: { type: Date, index: true, default: Date.now }
     }

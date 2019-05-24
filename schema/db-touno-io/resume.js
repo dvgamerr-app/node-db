@@ -1,4 +1,4 @@
-const mongo = require('../../index')
+const { Mixed } = require('../../type')
 
 module.exports = [
   {
@@ -6,7 +6,7 @@ module.exports = [
     name: 'resume',
     schema: {
       section: { index: true, type: String, require: true },
-      content: mongo.Schema.Mixed
+      content: Mixed
     }
   },
   {

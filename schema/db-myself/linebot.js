@@ -1,4 +1,4 @@
-const mongo = require('../../index')
+const { Mixed } = require('../../type')
 
 module.exports = [
   {
@@ -11,7 +11,7 @@ module.exports = [
       accesstoken: String,
       secret: String,
       options: Object,
-      channel: mongo.Schema.Mixed,
+      channel: Mixed,
       created: { type: Date, index: true, default: Date.now }
     }
   }
