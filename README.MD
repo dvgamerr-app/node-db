@@ -22,7 +22,7 @@ import mongo from '@touno.io/db'
 
 mongo.set('TableName1', 'table_name1', { data: String })
 
-await touno.open('database_name')
+await mongo.open('database_name')
 
 mongo.set({
   id: 'TableName2',
