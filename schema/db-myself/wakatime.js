@@ -1,7 +1,7 @@
 module.exports = [
   {
     id: 'WakaSummaries',
-    name: 'db-wakatime',
+    name: 'wakatime',
     schema: {
       name: { index: true, type: String },
       type: { index: true, type: String },
@@ -20,7 +20,7 @@ module.exports = [
   },
   {
     id: 'WakaProjects',
-    name: 'db-wakatime-project',
+    name: 'wakatime-project',
     schema: {
       project: { index: true, type: String },
       name: { index: true, type: String },
