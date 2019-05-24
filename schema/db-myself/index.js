@@ -1,6 +1,5 @@
-const mongo = require('../../index')
+const mongo = require('../../index')('db-myself')
 
-mongo.dbname = 'db-myself'
 mongo.set(require('./expanse'))
 mongo.set(require('./linebot'))
 mongo.set(require('./schedule'))

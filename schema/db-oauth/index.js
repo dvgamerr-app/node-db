@@ -1,5 +1,4 @@
-const mongo = require('../../index')
+const mongo = require('../../index')('db-oauth')
 
-mongo.dbname = 'db-oauth'
 mongo.set(require('./auth'))
 module.exports = mongo

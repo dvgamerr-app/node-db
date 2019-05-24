@@ -35,34 +35,32 @@ const { mConn, mMapping } = {
     }
   }
 }
-let conn = {
-  dbname: 'default',
-  Schema: {
-    ObjectId: mongoose.Schema.ObjectId,
-    Mixed: mongoose.Schema.Types.Mixed
-  },
-  connected: () => global._mongo.connected(),
-  set: (name, collection, schema) => {
-    if (name instanceof Array) {
-      for (const db of name) mMapping(conn.dbname, db)
-    } else if (name instanceof Object) {
-      mMapping(conn.dbname, name)
-    } else if (typeof name === 'string') {
-      mMapping(conn.dbname, { id: name, name: collection, schema })
-    }
-  },
-  get: (name = '') => {
-    return name ? getConnection(conn.dbname)[name] : getConnection(conn.dbname)
-  },
-  open: async (dbname) => {
-    if (dbname) conn.dbname = dbname
-    if (!getConnection(conn.dbname).connected()) {
-      await mConn(conn.dbname)
-      if (tmp[conn.dbname]) for (const db of tmp[conn.dbname]) mMapping(conn.dbname, db, true)
-      tmp[conn.dbname] = null
-    }
-  },
-  close: async () => global['_mongo.' + conn.dbname].close()
+module.exports = (dbname = 'default') => {
+  return {
+    Schema: {
+      ObjectId: mongoose.Schema.ObjectId,
+      Mixed: mongoose.Schema.Types.Mixed
+    },
+    connected: () => global._mongo.connected(),
+    set: (name, collection, schema) => {
+      if (name instanceof Array) {
+        for (const db of name) mMapping(dbname, db)
+      } else if (name instanceof Object) {
+        mMapping(dbname, name)
+      } else if (typeof name === 'string') {
+        mMapping(dbname, { id: name, name: collection, schema })
+      }
+    },
+    get: (name = '') => {
+      return name ? getConnection(dbname)[name] : getConnection(dbname)
+    },
+    open: async () => {
+      if (!getConnection(dbname).connected()) {
+        await mConn(dbname)
+        if (tmp[dbname]) for (const db of tmp[dbname]) mMapping(dbname, db, true)
+        tmp[dbname] = null
+      }
+    },
+    close: async () => global['_mongo.' + dbname].close()
+  }
 }
-
-module.exports = conn

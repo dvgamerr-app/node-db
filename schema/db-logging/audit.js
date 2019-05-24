@@ -11,6 +11,7 @@ module.exports = [
       status: { type: String, index: true, default: 'debug' },
       permission: { type: Number, index: true, default: 0 },
       message: mongo.Schema.Mixed,
+      raw: String,
       created: { type: Date, index: true, default: Date.now }
     }
   }

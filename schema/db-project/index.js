@@ -1,6 +1,5 @@
-const mongo = require('../../index')
+const mongo = require('../../index')('db-project')
 
-mongo.dbname = 'db-project'
 mongo.set(require('./exhentai'))
 mongo.set(require('./rotomu'))
 module.exports = mongo

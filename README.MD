@@ -19,12 +19,15 @@ yarn i @touno-io/db
 **sample**
 ```javascript
 import mongo from '@touno.io/db'
+const db = mongo()
+// or
+const db = require('@touno.io/db')()
 
-mongo.set('TableName1', 'table_name1', { data: String })
+db.set('TableName1', 'table_name1', { data: String })
 
-await mongo.open('database_name')
+await db.open('database_name')
 
-mongo.set({
+db.set({
   id: 'TableName2',
   name: 'table_name2',
   schema: {
@@ -32,13 +35,13 @@ mongo.set({
   }
 })
 
-const { TableName1 } = mongo.get()
+const { TableName1 } = db.get()
 // or 
-const TableName1 = mongo.get('TableName1')
+const TableName1 = db.get('TableName1')
 
 let { data } = await TableName1.findOne({})
 
-await mongo.close()
+await db.close()
 ```
 ----------
 ### License

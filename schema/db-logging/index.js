@@ -1,6 +1,5 @@
-const mongo = require('../../index')
+const mongo = require('../../index')('db-logging')
 
-mongo.dbname = 'db-logging'
 mongo.set(require('./audit'))
 mongo.set(require('./http'))
 mongo.set(require('./line-bot'))
