@@ -41,7 +41,7 @@ module.exports = (dbname = 'default') => {
       ObjectId: mongoose.Schema.ObjectId,
       Mixed: mongoose.Schema.Types.Mixed
     },
-    connected: () => global._mongo.connected(),
+    connected: () => global['_mongo.' + dbname].connected(),
     set: (name, collection, schema) => {
       if (name instanceof Array) {
         for (const db of name) mMapping(dbname, db)
