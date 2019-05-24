@@ -8,6 +8,7 @@ before_script:
 - npm i
 - npm i --only=dev
 script:
+- git checkout .
 - npm --version
 deploy:
   provider: npm
