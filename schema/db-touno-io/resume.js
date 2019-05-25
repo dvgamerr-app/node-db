@@ -6,7 +6,8 @@ module.exports = [
     name: 'resume',
     schema: {
       section: { index: true, type: String, require: true },
-      content: Mixed
+      content: Mixed,
+      updated: { type: Date, default: Date.now }
     }
   },
   {
