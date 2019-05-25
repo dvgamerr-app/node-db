@@ -6,7 +6,11 @@ module.exports = [
     name: 'expense-account',
     schema: {
       name: { type: String, index: true, unique: true },
-      type: { type: String, index: true }, // cash { name }, saving { name }, creditcard { name, paydate, billdate }, laon { name, interest_percent, paydate, billdate }
+      // cash { name }, saving { name }, creditcard { name, paydate, billdate }, laon { name, interest_percent, paydate, billdate }
+      type: {
+        name: { type: String, index: true },
+        option: Object
+      },
       group: String,
       amount: Number,
       currency: String,

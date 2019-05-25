@@ -38,7 +38,7 @@ module.exports = [
     id: 'AuthSession',
     name: 'auth-session',
     schema: {
-      username: { type: String, index: true, ref: 'AuthSession' },
+      username: { type: String, index: true, ref: 'Auth' },
       token: String,
       hash: String,
       online: { type: Boolean, index: true, default: false },
