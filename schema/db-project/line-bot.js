@@ -19,6 +19,7 @@ module.exports = [
     schema: {
       botname: { type: String, index: true, require: true, Ref: 'LineBot' },
       payload: { type: Mixed, default: null },
+      userTo: { type: String, index: true, require: true },
       notify: { type: Boolean, index: true, default: false },
       schedule: { type: Date, index: true, default: null },
       created: { type: Date, index: true, default: Date.now }
