@@ -1,6 +1,6 @@
 {
   "name": "@touno-io/db",
-  "version": "2.2.5",
+  "version": "2.3.0",
   "description": "all database schema in touno-io project.",
   "main": "index.js",
   "scripts": {
