@@ -18,7 +18,6 @@
     "type.js",
     "LICENSE",
     "README.MD",
-    "mongo/**/*",
     "schema/**/*"
   ],
   "keywords": [
