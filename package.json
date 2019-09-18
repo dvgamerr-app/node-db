@@ -35,16 +35,11 @@
   },
   "homepage": "https://github.com/touno-io/node-db#readme",
   "dependencies": {
-    "moment-timezone": "^0.5.25",
-    "mongoose": "^5.5.10"
+    "moment-timezone": "^0.5.26",
+    "mongoose": "^5.7.1"
   },
   "devDependencies": {
-    "env-cmd": "^9.0.1",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-node": "^9.0.1",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "env-cmd": "^10.0.1",
+    "eslint": "^6.4.0"
   }
 }
