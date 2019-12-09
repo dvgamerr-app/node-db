@@ -5,14 +5,14 @@ module.exports = [
     id: 'Cinema',
     name: 'cinema',
     schema: {
+      weekly: { type: Number, index: true },
       img: String,
       link: String ,
       name: { type: String, index: true },
       display: String,
-      release: String,
-      time: String,
-      cinema: Mixed,
-      weekly: { type: Number, index: true }
+      release: Date,
+      time: Number,
+      cinema: Mixed
     }
   }
 ]
