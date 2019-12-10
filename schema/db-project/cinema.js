@@ -6,6 +6,7 @@ module.exports = [
     name: 'cinema',
     schema: {
       weekly: { type: Number, index: true },
+      year: { type: Number, index: true },
       img: String,
       link: String ,
       name: { type: String, index: true },
