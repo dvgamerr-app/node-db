@@ -1,7 +1,6 @@
 const mongo = require('../../index')('db-myself')
 
 mongo.set(require('./expanse'))
-mongo.set(require('./linebot'))
 mongo.set(require('./schedule'))
 mongo.set(require('./storage'))
 mongo.set(require('./wakatime'))
