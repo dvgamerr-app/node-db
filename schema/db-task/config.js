@@ -8,7 +8,7 @@ module.exports = [
       scope: { index: true, type: String },
       key: { index: true, type: String },
       value: Mixed,
-      created: { index: true, type: Date, Default: Date.now }
+      updated: { index: true, type: Date, Default: Date.now }
     }
   },
   {
@@ -21,7 +21,7 @@ module.exports = [
       crontab: String,
       initial: { index: true, type: Boolean, Default: false },
       started: { index: true, type: Date, Default: null },
-      created: { index: true, type: Date, Default: Date.now }
+      updated: { index: true, type: Date, Default: Date.now }
     }
   }
 ]
