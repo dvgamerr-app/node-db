@@ -34,8 +34,8 @@
   },
   "homepage": "https://github.com/touno-io/node-db#readme",
   "dependencies": {
-    "moment-timezone": "^0.5.26",
-    "mongoose": "^5.7.1"
+    "moment-timezone": "^0.5.28",
+    "mongoose": "^5.9.6"
   },
   "devDependencies": {
     "env-cmd": "^10.0.1",

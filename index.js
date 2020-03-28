@@ -42,6 +42,7 @@ module.exports = (dbname = 'default') => {
       ObjectId: mongoose.Schema.ObjectId,
       Mixed: mongoose.Schema.Types.Mixed
     },
+    Types: mongoose.Types,
     connected: () => global['_mongo.' + dbname].connected(),
     set: (name, collection, schema) => {
       if (name instanceof Array) {
