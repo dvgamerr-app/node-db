@@ -1,8 +1,6 @@
-const moment = require('moment-timezone')
-moment.tz.setDefault(process.env.TZ || 'Asia/Bangkok')
-
 module.exports = {
   myself: require('./db-myself'),
+  notice: require('./db-notice'),
   oauth: require('./db-oauth'),
   project: require('./db-project'),
   task: require('./db-task'),
