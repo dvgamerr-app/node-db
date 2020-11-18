@@ -115,6 +115,15 @@ module.exports = [
     }
   },
   {
+    id: 'ServiceWebhook',
+    name: 'db-service-webhook',
+    schema: {
+      service: { type: String, index: true },
+      room: { type: String, index: true },
+      body: String
+    }
+  },
+  {
     id: 'ChatWebhook',
     name: 'db-chat-webhook',
     schema: {
