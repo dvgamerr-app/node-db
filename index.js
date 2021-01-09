@@ -28,7 +28,7 @@ const { mConn, mMapping } = {
 
     if (mongo[table.id]) throw new Error(`MongoDB schema name is duplicate '${table.id}'`)
     if (mongo.connected() || force) {
-      mongo[table.id] = mongo.model(table.name, mongoose.Schema(table.schema), table.name)
+      mongo[table.id] = mongo.model(table.name, mongoose.Schema(table.schema, { versionKey: false }), table.name)
     } else {
       if (!tmp[dbname]) tmp[dbname] = []
       tmp[dbname].push(table)

@@ -6,17 +6,16 @@ module.exports = [
     name: 'team-account',
     schema: {
       username: { type: String, index: true, require: true, unique: true },
-      pwd: { type: String, index: true, require: true },
-      fullname: { type: String, index: true },
+      pwd: { type: String, require: true },
+      fullname: { type: String },
       email: { type: String, index: true },
-      level: { type: Number, index: true },
+      level: { type: Number },
       permission: { type: Array, default: null },
       facebook: { type: Object, default: null },
       line: { type: Object, default: null },
       enabled: { type: Boolean, index: true, default: true },
-      lasted: { type: Date, index: true, default: Date.now },
-      updated: { type: Date, index: true, default: Date.now },
-      created: { type: Date, index: true, default: Date.now }
+      lasted: { type: Date, default: Date.now },
+      updated: { type: Date, default: Date.now }
     }
   },
   {
@@ -28,7 +27,7 @@ module.exports = [
         fullname: String,
         email: String
       },
-      title: { type: String, index: true },
+      title: { type: String },
       description: String,
       project: { type: String, index: true },
       duedate: { type: Date, index: true },
@@ -41,11 +40,10 @@ module.exports = [
         }
       ],
       tags: [ String ],
-      status: { type: Number, index: true, default: 0 },
-      private: { type: Boolean, index: true, default: false  },
-      deleted: { type: Boolean, index: true, default: false  },
-      updated: { type: Date, index: true, default: Date.now },
-      created: { type: Date, index: true, default: Date.now },
+      status: { type: Number, default: 0 },
+      private: { type: Boolean, default: false  },
+      deleted: { type: Boolean, default: false  },
+      updated: { type: Date, default: Date.now }
     }
   },
   {
@@ -55,9 +53,8 @@ module.exports = [
       todo: { type: ObjectId, index: true },
       owner: { type: ObjectId, index: true },
       description: String,
-      deleted: { type: Boolean, index: true },
-      updated: { type: Date, index: true, default: Date.now },
-      created: { type: Date, index: true, default: Date.now },
+      deleted: { type: Boolean },
+      updated: { type: Date, default: Date.now }
     }
   }
 ]
