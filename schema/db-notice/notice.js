@@ -85,6 +85,17 @@ module.exports = [
     }
   },
   {
+    id: 'LineBotUser',
+    name: 'db-line-bot-user',
+    schema: {
+      botname: { type: String, index: true },
+      roomname: { type: String, index: true },
+      user_id: String,
+      name: String,
+      created: { type: Date, index: true, default: Date.now }
+    }
+  },
+  {
     id: 'ServiceBot',
     name: 'db-service-bot',
     schema: {
