@@ -33,10 +33,10 @@
   },
   "homepage": "https://github.com/touno-io/node-db#readme",
   "dependencies": {
-    "mongoose": "^5.10.15"
+    "mongoose": "^5.11.13"
   },
   "devDependencies": {
     "env-cmd": "^10.0.1",
-    "eslint": "^7.13.0"
+    "eslint": "^7.18.0"
   }
 }

@@ -79,6 +79,7 @@ module.exports = [
       name: String,
       type: String,
       id: String,
+      variable: Object,
       active: { type: Boolean, index: true, default: true },
       created: { type: Date, index: true, default: Date.now }
     }
