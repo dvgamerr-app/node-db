@@ -62,6 +62,7 @@ module.exports = [
     id: 'LineBot',
     name: 'db-line-bot',
     schema: {
+      userId: { type: String, index: true, default: null },
       botname: { type: String, index: true },
       name: String,
       accesstoken: String,
@@ -75,6 +76,7 @@ module.exports = [
     id: 'LineBotRoom',
     name: 'db-line-bot-room',
     schema: {
+      userId: { type: String, index: true, default: null },
       botname: { type: String, index: true },
       name: String,
       type: String,
@@ -111,6 +113,7 @@ module.exports = [
     id: 'ServiceOauth',
     name: 'db-service-oauth',
     schema: {
+      userId: { type: String, index: true, default: null },
       service: { type: String, index: true },
       room: { type: String, index: true },
       name: String,
