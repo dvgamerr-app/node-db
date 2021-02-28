@@ -101,6 +101,7 @@ module.exports = [
     id: 'ServiceBot',
     name: 'db-service-bot',
     schema: {
+      userId: { type: String, index: true, default: null },
       name: String,
       service: { type: String, index: true },
       client: String,
