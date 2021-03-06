@@ -32,11 +32,11 @@
     "url": "https://github.com/touno-io/node-db/issues"
   },
   "homepage": "https://github.com/touno-io/node-db#readme",
-  "dependencies": {
-    "mongoose": "^5.11.15"
-  },
   "devDependencies": {
     "env-cmd": "^10.0.1",
     "eslint": "^7.18.0"
+  },
+  "dependencies": {
+    "mongoose": "^5.11.19"
   }
 }

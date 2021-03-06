@@ -99,7 +99,7 @@ module.exports = [
   },
   {
     id: 'ServiceBot',
-    name: 'db-service-bot',
+    name: 'db-service',
     schema: {
       userId: { type: String, index: true, default: null },
       name: String,
@@ -111,10 +111,9 @@ module.exports = [
     }
   },
   {
-    id: 'ServiceOauth',
+    id: 'ServiceBotOauth',
     name: 'db-service-oauth',
     schema: {
-      userId: { type: String, index: true, default: null },
       service: { type: String, index: true },
       room: { type: String, index: true },
       name: String,
