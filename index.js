@@ -17,17 +17,17 @@ const { mConn, mMapping } = {
     let MONGODB_URI = process.env.MONGODB_URI || `mongodb://${MONGODB_ACCOUNT}${MONGODB_SERVER}/${dbname}?authMode=scram-sha1${IsAdmin ? '&authSource=admin' : ''}${MONGODB_REPLICA ? `&replicaSet=${MONGODB_REPLICA}` : ''}`
     if (!process.env.MONGODB_URI) {
       if (existsSync(`/run/secrets/mongodb_uri`)) {
-        MONGODB_URI = (await readFile(`/run/secrets/mongodb_uri`)).toString().trim().replace(/\/\?/, `/${dbname}?`)
+        MONGODB_URI = (await readFile(`/run/secrets/mongodb_uri`)).toString().trim().replace(/\/\?/, `/${dbname}?`).replace(/\/$/, `/${dbname}`)
       }
     } else {
-      MONGODB_URI = MONGODB_URI.replace(/\/\?/, `/${dbname}?`)
+      MONGODB_URI = MONGODB_URI.replace(/\/\?/, `/${dbname}?`).replace(/\/$/, `/${dbname}`)
     }
 
     try {
       global['_mongo.' + dbname] = await mongoose.createConnection(MONGODB_URI, { useCreateIndex: true, useNewUrlParser: true, connectTimeoutMS: 10000, useUnifiedTopology: true })
       global['_mongo.' + dbname].connected = () => global['_mongo.' + dbname].readyState === 1
     } catch (ex) {
-      throw new Error(`MongoDB unable connect, ${MONGODB_URI}/${dbname} (State is ${global['_mongo.' + dbname] ? global['_mongo.' + dbname].readyState : 'Undefined'})`)
+      throw new mongoose.MongoError(`MongoDB unable connect, ${MONGODB_URI}/${dbname} (State is undefined)`)
     }
   },
   mMapping: (dbname, table, force = false) => {
