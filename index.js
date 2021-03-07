@@ -22,12 +22,11 @@ const { mConn, mMapping } = {
     } else {
       MONGODB_URI = MONGODB_URI.replace(/\/\?/, `/${dbname}?`).replace(/\/$/, `/${dbname}`)
     }
-
     try {
-      global['_mongo.' + dbname] = await mongoose.createConnection(MONGODB_URI, { useCreateIndex: true, useNewUrlParser: true, connectTimeoutMS: 10000, useUnifiedTopology: true })
+      global['_mongo.' + dbname] = await mongoose.createConnection(MONGODB_URI, { useCreateIndex: true, useNewUrlParser: true, connectTimeoutMS: 3000, useUnifiedTopology: true })
       global['_mongo.' + dbname].connected = () => global['_mongo.' + dbname].readyState === 1
     } catch (ex) {
-      throw new Error(`MongoDB unable connect, ${MONGODB_URI}/${dbname} (State is undefined)`)
+      throw new Error(`MongoDB unable connect, \n${MONGODB_URI} (State is undefined)`)
     }
   },
   mMapping: (dbname, table, force = false) => {
