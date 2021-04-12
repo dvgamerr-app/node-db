@@ -12,16 +12,25 @@ module.exports = [
     }
   },
   {
-    id: 'ConfigTask',
-    name: 'config-tasks',
+    id: 'Task',
+    name: 'task-config',
     schema: {
-      job: { index: true, type: String },
-      name: { index: true, type: String },
-      description: String,
       crontab: String,
-      initial: { index: true, type: Boolean, Default: false },
-      started: { index: true, type: Date, Default: null },
-      updated: { index: true, type: Date, Default: Date.now }
+      name: { index: true, type: String },
+      started: { type: Boolean, Default: false },
+      description: String
+    }
+  },
+  {
+    id: 'TaskHistory',
+    name: 'task-history',
+    schema: {
+      name: { index: true, type: String },
+      state: { type: Number, Default: 1 },
+      manual: { type: Boolean, Default: false },
+      exited: { type: Number, Default: null },
+      created: { type: Date, Default: Date.now },
+      updated: { type: Date, Default: null }
     }
   }
 ]
