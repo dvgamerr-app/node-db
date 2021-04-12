@@ -43,6 +43,8 @@ module.exports = {
     return createCronJob(name, false, Task, TaskHistory)
   },
   load: async (name, manual) => {
+    await task.open()
+    
     const { Task, TaskHistory } = task.get()
     const job = await Task.findOne({ name }, '_id')
     if (!job) throw new Error('task-job is not setting.')
