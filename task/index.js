@@ -27,8 +27,7 @@ const createCronJob = ({ name, started }, Task, TaskHistory) => {
     async start () {
       if (!cron) return
       cron.state = 2
-      const data = await TaskHistory.updateOne({ _id: cron._id }, { $set: { state: 2, updated: new Date() } })
-      console.log('start:', cron._id, data)
+      await TaskHistory.updateOne({ _id: cron._id }, { $set: { state: 2, updated: new Date() } })
     },
     async processing () {
       if (!cron) return
