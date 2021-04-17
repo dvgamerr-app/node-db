@@ -92,7 +92,7 @@ module.exports = [
     schema: {
       botname: { type: String, index: true },
       roomname: { type: String, index: true },
-      user_id: String,
+      userId: { type: String, index: true },
       name: String,
       created: { type: Date, index: true, default: Date.now }
     }
