@@ -3,7 +3,7 @@ module.exports = [
     id: 'LineCMD',
     name: 'db-line-cmd',
     schema: {
-      botname: { type: String, index: true },
+      service: { type: String, index: true },
       userId: { type: String, index: true },
       command: String,
       args: Array,
@@ -19,7 +19,7 @@ module.exports = [
     id: 'LineCMDWebhook',
     name: 'db-line-cmd-webhook',
     schema: {
-      botname: { type: String, index: true },
+      service: { type: String, index: true },
       command: String,
       method: { type: String, default: 'POST' },
       url: String,
@@ -31,7 +31,7 @@ module.exports = [
     id: 'LineOutbound',
     name: 'db-line-outbound',
     schema: {
-      botname: { type: String, index: true },
+      service: { type: String, index: true },
       userTo: String,
       type: String,
       sender: Object,
@@ -45,7 +45,7 @@ module.exports = [
     name: 'db-line-inbound',
     schema: {
       type: String,
-      botname: { type: String, index: true },
+      service: { type: String, index: true },
       replyToken: String,
       source: Object,
       message: Object,
@@ -63,7 +63,7 @@ module.exports = [
     name: 'db-line-bot',
     schema: {
       userId: { type: String, index: true, default: null },
-      botname: { type: String, index: true },
+      service: { type: String, index: true },
       name: String,
       accesstoken: String,
       secret: String,
@@ -77,10 +77,9 @@ module.exports = [
     name: 'db-line-bot-room',
     schema: {
       userId: { type: String, index: true, default: null },
-      botname: { type: String, index: true },
+      service: { type: String, index: true },
       name: String,
       type: String,
-      id: String,
       variable: Object,
       active: { type: Boolean, index: true, default: true },
       created: { type: Date, index: true, default: Date.now }
@@ -90,9 +89,9 @@ module.exports = [
     id: 'LineBotUser',
     name: 'db-line-bot-user',
     schema: {
-      botname: { type: String, index: true },
-      roomname: { type: String, index: true },
       userId: { type: String, index: true },
+      service: { type: String, index: true },
+      room: { type: String, index: true },
       name: String,
       created: { type: Date, index: true, default: Date.now }
     }
@@ -101,9 +100,9 @@ module.exports = [
     id: 'ServiceBot',
     name: 'db-service',
     schema: {
-      userId: { type: String, index: true, default: null },
-      name: String,
+      userId: { type: String, index: true },
       service: { type: String, index: true },
+      name: String,
       client: String,
       secret: String,
       active: { type: Boolean, index: true, default: true },
@@ -143,7 +142,7 @@ module.exports = [
     name: 'db-chat-webhook',
     schema: {
       type: { type: String, index: true },
-      botname: { type: String, index: true },
+      service: { type: String, index: true },
       name: String,
       uri: String,
       active: { type: Boolean, index: true, default: true },
